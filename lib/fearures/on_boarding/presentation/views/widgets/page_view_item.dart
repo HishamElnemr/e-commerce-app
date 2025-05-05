@@ -1,3 +1,5 @@
+import 'package:e_commerce_app/constants.dart';
+import 'package:e_commerce_app/core/services/shared_preferences_singleton.dart';
 import 'package:e_commerce_app/core/utils/app_text_styles.dart';
 import 'package:e_commerce_app/fearures/auth/presentation/views/login_view.dart';
 import 'package:flutter/material.dart';
@@ -45,6 +47,7 @@ class PageViewItem extends StatelessWidget {
                   top: 0,
                   child: GestureDetector(
                     onTap: () {
+                      Prefs.setBool(kIsOnBoardingViewSeen, true);
                       Navigator.of(
                         context,
                       ).pushReplacementNamed(LoginView.routeName);

@@ -1,6 +1,7 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:e_commerce_app/app_color.dart';
 import 'package:e_commerce_app/constants.dart';
+import 'package:e_commerce_app/core/services/shared_preferences_singleton.dart';
 import 'package:e_commerce_app/core/widgets/custom_button.dart';
 import 'package:e_commerce_app/fearures/auth/presentation/views/login_view.dart';
 import 'package:e_commerce_app/fearures/on_boarding/presentation/views/widgets/on_boarding_page_view.dart';
@@ -58,6 +59,7 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
             padding: EdgeInsets.symmetric(horizontal: kHorizontalPadding),
             child: CustomButton(onPressed: () 
             {
+               Prefs.setBool(kIsOnBoardingViewSeen, true);
                Navigator.of(context).pushReplacementNamed(LoginView.routeName);
             }, text: 'ابدأ الآن'),
           ),
