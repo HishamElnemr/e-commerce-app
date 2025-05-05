@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/app_color.dart';
 import 'package:e_commerce_app/core/helper_function.dart/on_generate_route.dart';
 import 'package:e_commerce_app/core/services/shared_preferences_singleton.dart';
 import 'package:e_commerce_app/fearures/splash/presentation/views/splash_view.dart';
@@ -17,7 +18,12 @@ class FruitHub extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(fontFamily: 'Cairo'),
+      theme: ThemeData(
+        fontFamily: 'Cairo',
+        scaffoldBackgroundColor: Colors.white,
+        colorScheme: ColorScheme.fromSeed(seedColor: AppColors.kPrimaryColor),
+      ),
+
       localizationsDelegates: [
         S.delegate,
         GlobalMaterialLocalizations.delegate,
