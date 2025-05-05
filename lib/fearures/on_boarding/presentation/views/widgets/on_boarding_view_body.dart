@@ -2,6 +2,7 @@ import 'package:dots_indicator/dots_indicator.dart';
 import 'package:e_commerce_app/app_color.dart';
 import 'package:e_commerce_app/constants.dart';
 import 'package:e_commerce_app/core/widgets/custom_button.dart';
+import 'package:e_commerce_app/fearures/auth/presentation/views/login_view.dart';
 import 'package:e_commerce_app/fearures/on_boarding/presentation/views/widgets/on_boarding_page_view.dart';
 import 'package:flutter/material.dart';
 
@@ -37,7 +38,7 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
     return Column(
       children: [
         Expanded(child: OnBoardingPageView(pageController: pageController)),
-               DotsIndicator(
+        DotsIndicator(
           dotsCount: 2,
           decorator: DotsDecorator(
             activeColor: AppColors.kPrimaryColor,
@@ -55,7 +56,10 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
           maintainState: true,
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: kHorizontalPadding),
-            child: CustomButton(onPressed: () {}, text: 'ابدأ الآن'),
+            child: CustomButton(onPressed: () 
+            {
+               Navigator.of(context).pushReplacementNamed(LoginView.routeName);
+            }, text: 'ابدأ الآن'),
           ),
         ),
         const SizedBox(height: 43),
