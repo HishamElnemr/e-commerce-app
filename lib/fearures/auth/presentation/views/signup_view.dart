@@ -8,7 +8,7 @@ class SignupView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: customAppBar(context, title: 'إنشاء حساب جديد'),
+      appBar: customAppBar(context, title: ' حساب جديد'),
       body: SignupViewBody(),
     );
   }
