@@ -14,7 +14,7 @@ class OnBoardingPageView extends StatelessWidget {
       physics: const BouncingScrollPhysics(),
       children: [
         PageViewItem(
-          imagePath: Assets.assetsImagesFruitBasketAmico_1,
+          imagePath: Assets.assetsImagesBasketAmico1Svg,
           backGround: Assets.assetsImagesOnBoardingFirstPageBg,
           title: Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -40,7 +40,7 @@ class OnBoardingPageView extends StatelessWidget {
           isFirstPage: true,
         ),
         PageViewItem(
-          imagePath: Assets.assetsImagesPineappleCuate_1,
+          imagePath: Assets.assetsImagesPineappleCuate1,
           backGround: Assets.assetsImagesOnBoardingSecPageBg,
           subTitle:
               'نقدم لك أفضل الفواكه المختارة بعناية. اطلع على التفاصيل والصور والتقييمات لتتأكد من اختيار الفاكهة المثالية',
