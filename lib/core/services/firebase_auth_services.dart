@@ -12,16 +12,16 @@ class FirebaseAuthServices {
       return credential.user!;
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
-        throw CustomException(message: 'The password provided is too weak.');
+        throw CustomException(message: 'كلمة المرور ضعيفة جداً');
       } else if (e.code == 'email-already-in-use') {
-        throw CustomException(message: 'The email address is not valid.');
+        throw CustomException(message: 'البريد الالكتروني مستخدم من قبل');
       }
       else 
       {
-        throw CustomException(message: 'An error occurred. Please try again.');
+        throw CustomException(message: 'حدث خطأ ما يرجى المحاولة لاحقاً');
       }
     } catch (e) {
-      throw CustomException(message: 'An error occurred. Please try again.');
+      throw CustomException(message: 'حدث خطأ ما يرجى المحاولة لاحقاً');
     }
   }
 }

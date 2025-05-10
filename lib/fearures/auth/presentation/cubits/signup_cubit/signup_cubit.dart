@@ -2,7 +2,7 @@ import 'package:e_commerce_app/fearures/auth/domain/repos/auth_repo.dart';
 import 'package:e_commerce_app/fearures/auth/presentation/cubits/signup_cubit/signup_states.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class SignupCubit extends Cubit {
+class SignupCubit extends Cubit<SignupStates> {
   SignupCubit(this.authRepo) : super(SignupInitialState());
   final AuthRepo authRepo;
  Future<void> createUserWithEmailAndPassword({
