@@ -3,6 +3,7 @@ import 'package:e_commerce_app/core/services/shared_preferences_singleton.dart';
 import 'package:e_commerce_app/core/utils/app_images.dart';
 import 'package:e_commerce_app/fearures/auth/presentation/views/login_view.dart';
 import 'package:e_commerce_app/fearures/on_boarding/presentation/views/on_boarding_view.dart';
+import 'package:e_commerce_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -32,6 +33,9 @@ class _SplashViewBodyState extends State<SplashViewBody> {
         ),
         SvgPicture.asset(Assets.assetsImagesLogo),
         SvgPicture.asset(Assets.assetsImagesSplashBottom, fit: BoxFit.fill),
+        const SizedBox(
+          height: 20,
+        ),
       ],
     );
   }
