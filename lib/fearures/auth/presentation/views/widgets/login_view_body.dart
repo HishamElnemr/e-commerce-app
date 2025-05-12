@@ -89,13 +89,19 @@ class _LoginViewBodyState extends State<LoginViewBody> {
               SocialLoginButton(
                 iconPath: 'assets/images/facebook_icon.svg',
                 text: 'تسجيل الدخول باستخدام فيسبوك',
-                onPressed: () {},
+                onPressed: () 
+                {
+                  context.read<SigninCubit>().signInWithFacebook();
+                },
               ),
               SizedBox(height: 16),
               SocialLoginButton(
                 iconPath: 'assets/images/appl_icon.svg',
                 text: 'تسجيل الدخول باستخدام ابل',
-                onPressed: () {},
+                onPressed: () 
+                {
+                  context.read<SigninCubit>().signInWithApple();
+                },
               ),
             ],
           ),
