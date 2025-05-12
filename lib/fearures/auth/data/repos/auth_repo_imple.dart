@@ -7,6 +7,7 @@ import 'package:e_commerce_app/core/services/firebase_auth_services.dart';
 import 'package:e_commerce_app/fearures/auth/data/models/user_model.dart';
 import 'package:e_commerce_app/fearures/auth/domain/entites/user_entity.dart';
 import 'package:e_commerce_app/fearures/auth/domain/repos/auth_repo.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class AuthRepoImpl extends AuthRepo {
   final FirebaseAuthServices firebaseAuthServices;
@@ -46,6 +47,19 @@ class AuthRepoImpl extends AuthRepo {
       return left(ServerFailure(e.message));
     } catch (e) {
       log('Exception in signInWithEmailAndPassword ${e.toString()}');
+      return left(ServerFailure('حدث خطأ ما يرجى المحاولة لاحقاً'));
+    }
+  }
+
+  @override
+  Future<Either<Failure, UserEntity>> signInWithGoogle() async {
+    try {
+      var user = await firebaseAuthServices.signInWithGoogle();
+      return right(UserModel.fromFirebaseUser(user));
+    } on CustomException catch (e) {
+      return left(ServerFailure(e.message));
+    } catch (e) {
+      log('Exception in signInWithGoogle ${e.toString()}');
       return left(ServerFailure('حدث خطأ ما يرجى المحاولة لاحقاً'));
     }
   }
