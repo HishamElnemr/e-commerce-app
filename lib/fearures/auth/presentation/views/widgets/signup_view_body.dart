@@ -85,7 +85,7 @@ class _SignupViewBodyState extends State<SignupViewBody> {
                 text: 'انشاء حساب جديد',
               ),
               const SizedBox(height: 16),
-              HaveAnAccount(),
+            const  HaveAnAccount(),
             ],
           ),
         ),

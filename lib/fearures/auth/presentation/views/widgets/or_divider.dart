@@ -9,7 +9,7 @@ class OrDivider extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Expanded(child: Divider(color: Color(0xffC9CECF), thickness: 1)),
+       const Expanded(child: Divider(color: Color(0xffC9CECF), thickness: 1)),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0),
           child: Text(
@@ -17,7 +17,7 @@ class OrDivider extends StatelessWidget {
             style: TextStyles.semiBold16.copyWith(color: Color(0xff616A6B)),
           ),
         ),
-        Expanded(child: Divider(color: Color(0xffC9CECF), thickness: 1)),
+      const  Expanded(child: Divider(color: Color(0xffC9CECF), thickness: 1)),
       ],
     );
   }

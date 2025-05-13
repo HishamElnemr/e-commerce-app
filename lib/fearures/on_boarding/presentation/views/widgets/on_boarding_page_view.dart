@@ -19,7 +19,7 @@ class OnBoardingPageView extends StatelessWidget {
           title: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(' مرحبًا بك في ', style: TextStyles.bold23),
+            const  Text(' مرحبًا بك في ', style: TextStyles.bold23),
               Text(
                 ' Hub',
                 style: TextStyles.bold23.copyWith(
@@ -39,7 +39,7 @@ class OnBoardingPageView extends StatelessWidget {
 
           isFirstPage: true,
         ),
-        PageViewItem(
+     const   PageViewItem(
           imagePath: Assets.assetsImagesPineappleCuate1,
           backGround: Assets.assetsImagesOnBoardingSecPageBg,
           subTitle:

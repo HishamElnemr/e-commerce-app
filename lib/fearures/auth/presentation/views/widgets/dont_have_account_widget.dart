@@ -12,7 +12,7 @@ class DontHaveAccountWidget extends StatelessWidget {
     return Text.rich(
       TextSpan(
         text: 'ليس لديك حساب؟',
-        style: TextStyles.semiBold16.copyWith(color: Color(0xff616A6B)),
+        style: TextStyles.semiBold16.copyWith(color: const Color(0xff616A6B)),
         children: [
           TextSpan(
             recognizer: TapGestureRecognizer()..onTap = () 

@@ -34,7 +34,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              SizedBox(height: 24),
+              const SizedBox(height: 24),
               CustomTextFormField(
                 hitText: 'البريد الالكتروني',
                 keyboardType: TextInputType.emailAddress,
@@ -42,20 +42,20 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                   email = value!;
                 },
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               PasswordField(
                 onSaved: (value) {
                   password = value!;
                 },
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               Text(
                 'نسيت كلمة المرور؟',
                 style: TextStyles.semiBold13.copyWith(
                   color: AppColors.lightPrimaryColor,
                 ),
               ),
-              SizedBox(height: 33),
+              const SizedBox(height: 33),
               CustomButton(
                 onPressed: () {
                   if (formKey.currentState!.validate()) {
@@ -71,45 +71,44 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                 },
                 text: 'تسجيل الدخول',
               ),
-              SizedBox(height: 33),
-              Align(
+              const SizedBox(height: 33),
+              const Align(
                 alignment: Alignment.center,
                 child: DontHaveAccountWidget(),
               ),
-              SizedBox(height: 33),
-              OrDivider(),
-              SizedBox(height: 16),
+              const SizedBox(height: 33),
+              const OrDivider(),
+              const SizedBox(height: 16),
               SocialLoginButton(
                 iconPath: 'assets/images/google_icon.svg',
                 text: 'تسجيل الدخول باستخدام جوجل',
-                onPressed: () 
-                {
+                onPressed: () {
                   context.read<SigninCubit>().signInWithGoogle();
                 },
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               SocialLoginButton(
                 iconPath: 'assets/images/facebook_icon.svg',
                 text: 'تسجيل الدخول باستخدام فيسبوك',
-                onPressed: () 
-                {
+                onPressed: () {
                   context.read<SigninCubit>().signInWithFacebook();
                 },
               ),
-              SizedBox(height: 16),
-             Platform.isIOS ? Column(
-                children: [
-                  SocialLoginButton(
-                    iconPath: 'assets/images/appl_icon.svg',
-                    text: 'تسجيل الدخول باستخدام ابل',
-                    onPressed: () 
-                    {
-                      context.read<SigninCubit>().signInWithApple();
-                    },
-                  ),
-                  SizedBox(height: 16),
-                ],
-              ) : const SizedBox(),
+              const SizedBox(height: 16),
+              Platform.isIOS
+                  ? Column(
+                    children: [
+                      SocialLoginButton(
+                        iconPath: 'assets/images/appl_icon.svg',
+                        text: 'تسجيل الدخول باستخدام ابل',
+                        onPressed: () {
+                          context.read<SigninCubit>().signInWithApple();
+                        },
+                      ),
+                      const SizedBox(height: 16),
+                    ],
+                  )
+                  : const SizedBox(),
             ],
           ),
         ),

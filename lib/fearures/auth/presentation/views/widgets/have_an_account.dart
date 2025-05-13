@@ -11,7 +11,7 @@ class HaveAnAccount extends StatelessWidget {
     return Text.rich(
       TextSpan(
         text: ' تمتلك حساب بالفعل؟',
-        style: TextStyles.semiBold16.copyWith(color: Color(0xff616A6B)),
+        style: TextStyles.semiBold16.copyWith(color: const Color(0xff616A6B)),
         children: [
           TextSpan(
             recognizer:
