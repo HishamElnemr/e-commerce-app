@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/app_color.dart';
 import 'package:e_commerce_app/core/utils/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
@@ -31,7 +32,7 @@ class CustomTextFormField extends StatelessWidget {
       decoration: InputDecoration(
         suffixIcon: suffixIcon,
         hintText: hitText,
-        hintStyle: TextStyles.bold13.copyWith(color: const Color(0xFF949D9E)),
+        hintStyle: TextStyles.bold13.copyWith(color: AppColors.kGreyColor,),
         filled: true,
         fillColor: const Color(0xFFF9FAFA),
         border: buildBorder(),

@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/app_color.dart';
 import 'package:e_commerce_app/core/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
 
@@ -25,13 +26,13 @@ class _PasswordFieldState extends State<PasswordField> {
         },
         child:
             isObscure
-                ? const Icon(
+                ?  const Icon(
                   Icons.visibility_outlined,
-                  color: Color(0xFF949D9E),
+                  color: AppColors.kGreyColor,
                 )
                 : const Icon(
                   Icons.visibility_off_outlined,
-                  color: Color(0xFF949D9E),
+                   color: AppColors.kGreyColor,
                 ),
       ),
       onSaved: widget.onSaved,

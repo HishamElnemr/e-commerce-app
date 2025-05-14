@@ -22,6 +22,14 @@ class Assets {
   /// assets/images/facebook_icon.svg
   static const String assetsImagesFacebookIcon = "assets/images/facebook_icon.svg";
 
+  /// Assets for assetsImagesFilter
+  /// assets/images/filter.svg
+  static const String assetsImagesFilter = "assets/images/filter.svg";
+
+  /// Assets for assetsImagesFilter2
+  /// assets/images/filter2.svg
+  static const String assetsImagesFilter2 = "assets/images/filter2.svg";
+
   /// Assets for assetsImagesGoogleIcon
   /// assets/images/google_icon.svg
   static const String assetsImagesGoogleIcon = "assets/images/google_icon.svg";
@@ -53,6 +61,10 @@ class Assets {
   /// Assets for assetsImagesProfileImage
   /// assets/images/profile_image.png
   static const String assetsImagesProfileImage = "assets/images/profile_image.png";
+
+  /// Assets for assetsImagesSearchIcon
+  /// assets/images/search_icon.svg
+  static const String assetsImagesSearchIcon = "assets/images/search_icon.svg";
 
   /// Assets for assetsImagesSplashBottom
   /// assets/images/splash_bottom.svg

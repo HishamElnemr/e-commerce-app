@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/app_color.dart';
 import 'package:e_commerce_app/constants.dart';
 import 'package:e_commerce_app/core/services/shared_preferences_singleton.dart';
 import 'package:e_commerce_app/core/utils/app_text_styles.dart';
@@ -57,7 +58,7 @@ class PageViewItem extends StatelessWidget {
                       child: Text(
                         'تخط',
                         style: TextStyles.regular13.copyWith(
-                          color: const Color(0xFF949D9E),
+                          color: AppColors.kGreyColor,
                         ),
                       ),
                     ),
@@ -76,7 +77,7 @@ class PageViewItem extends StatelessWidget {
             textAlign: TextAlign.center,
             subTitle,
             style: TextStyles.semiBold13.copyWith(
-              color: const Color(0xFF4E5456),
+              color: AppColors.kGreyColor,
             ),
           ),
         ),
