@@ -6,7 +6,6 @@ import 'package:e_commerce_app/fearures/auth/presentation/views/widgets/signup_v
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-
 class SignupViewBodyBlocConsumer extends StatelessWidget {
   const SignupViewBodyBlocConsumer({super.key});
 
@@ -15,8 +14,10 @@ class SignupViewBodyBlocConsumer extends StatelessWidget {
     return BlocConsumer<SignupCubit, SignupStates>(
       listener: (context, state) {
         if (state is SignupFailureState) {
-          buildErrorBar(context, state.message);
-        } else if (state is SignupSuccessState) {}
+          buildSnackBar(context, state.message);
+        } else if (state is SignupSuccessState) {
+          buildSnackBar(context, 'تم انشاء الحساب بنجاح');
+        }
       },
       builder: (context, state) {
         return CustomModalProgressHUD(

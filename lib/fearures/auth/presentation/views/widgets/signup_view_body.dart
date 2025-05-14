@@ -74,7 +74,7 @@ class _SignupViewBodyState extends State<SignupViewBody> {
                             name: userName,
                           );
                     } else {
-                      buildErrorBar(context, 'يجب عليك قبول الشروط والأحكام');
+                      buildSnackBar(context, 'يجب عليك قبول الشروط والأحكام');
                     }
                   } else {
                     setState(() {
@@ -85,7 +85,7 @@ class _SignupViewBodyState extends State<SignupViewBody> {
                 text: 'انشاء حساب جديد',
               ),
               const SizedBox(height: 16),
-            const  HaveAnAccount(),
+              const HaveAnAccount(),
             ],
           ),
         ),

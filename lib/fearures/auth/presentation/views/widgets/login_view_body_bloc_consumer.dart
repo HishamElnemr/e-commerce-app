@@ -14,8 +14,11 @@ class LoginViewBodyBlocConsumer extends StatelessWidget {
     return BlocConsumer<SigninCubit, SigninStates>(
       listener: (context, state) {
         if (state is SigninFailureState) {
-          buildErrorBar(context, state.error);
-        } else if (state is SigninSuccessState) {}
+          buildSnackBar(context, state.error);
+        } else if (state is SigninSuccessState) 
+        {
+          buildSnackBar(context, 'تم تسجيل الدخول بنجاح');
+        }
       },
       builder: (context, state) {
         return ModalProgressHUD(

@@ -9,6 +9,10 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 
 class FirebaseAuthServices {
+  Future deleteUser() async {
+    await FirebaseAuth.instance.currentUser!.delete();
+  }
+
   Future<User> createUserWithEmailAndPassword({
     required String email,
     required String password,
@@ -149,6 +153,8 @@ class FirebaseAuthServices {
 
     // Sign in the user with Firebase. If the nonce we generated earlier does
     // not match the nonce in `appleCredential.identityToken`, sign in will fail.
-    return (await FirebaseAuth.instance.signInWithCredential(oauthCredential)).user!;
+    return (await FirebaseAuth.instance.signInWithCredential(
+      oauthCredential,
+    )).user!;
   }
 }
