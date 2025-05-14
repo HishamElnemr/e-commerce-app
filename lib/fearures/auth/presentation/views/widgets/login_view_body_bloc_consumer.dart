@@ -2,6 +2,7 @@ import 'package:e_commerce_app/core/helper_function.dart/build_error_bar.dart';
 import 'package:e_commerce_app/fearures/auth/presentation/cubits/signin_cubit/signin_cubit.dart';
 import 'package:e_commerce_app/fearures/auth/presentation/cubits/signin_cubit/signin_states.dart';
 import 'package:e_commerce_app/fearures/auth/presentation/views/widgets/login_view_body.dart';
+import 'package:e_commerce_app/fearures/home/presentation/views/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
@@ -18,6 +19,7 @@ class LoginViewBodyBlocConsumer extends StatelessWidget {
         } else if (state is SigninSuccessState) 
         {
           buildSnackBar(context, 'تم تسجيل الدخول بنجاح');
+          Navigator.pushReplacementNamed(context, HomeView.routeName);
         }
       },
       builder: (context, state) {
