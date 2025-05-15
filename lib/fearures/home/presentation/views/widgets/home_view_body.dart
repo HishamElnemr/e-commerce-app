@@ -1,6 +1,8 @@
 import 'package:e_commerce_app/constants.dart';
 import 'package:e_commerce_app/core/widgets/search_text_field.dart';
 import 'package:e_commerce_app/fearures/home/presentation/views/widgets/custom_home_app_bar.dart';
+import 'package:e_commerce_app/fearures/home/presentation/views/widgets/featured_item.dart';
+import 'package:e_commerce_app/fearures/home/presentation/views/widgets/featured_list.dart';
 import 'package:flutter/material.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -17,7 +19,10 @@ class HomeViewBody extends StatelessWidget {
               children: [
                 SizedBox(height: kTopPadding),
                 CustomHomeAppBar(),
+                SizedBox(height: kTopPadding),
                 SearchTextField(),
+                SizedBox(height:12),
+                FeaturedList(),
               ],
             ),
           ),

@@ -7,10 +7,8 @@ class FirestoreServices implements DatabaseService {
   @override
   Future<void> addData(String path, Map<String, dynamic> data,String? documentId) async {
     if(documentId != null) {
-      // If documentId is provided, set the data to that document
       await firestore.collection(path).doc(documentId).set(data);
     } else {
-      // If documentId is not provided, add a new document with auto-generated ID
       await firestore.collection(path).add(data);
     }
   }
