@@ -26,13 +26,13 @@ class _PasswordFieldState extends State<PasswordField> {
         },
         child:
             isObscure
-                ?  const Icon(
+                ? const Icon(
                   Icons.visibility_outlined,
-                  color: AppColors.kGreyColor,
+                  color: AppColors.greyColor,
                 )
                 : const Icon(
                   Icons.visibility_off_outlined,
-                   color: AppColors.kGreyColor,
+                  color: AppColors.greyColor,
                 ),
       ),
       onSaved: widget.onSaved,

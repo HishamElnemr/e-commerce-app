@@ -1,5 +1,8 @@
 import 'package:e_commerce_app/constants.dart';
+import 'package:e_commerce_app/core/widgets/fruit_item.dart';
 import 'package:e_commerce_app/core/widgets/search_text_field.dart';
+import 'package:e_commerce_app/fearures/home/presentation/views/widgets/best_selling_grid_view.dart';
+import 'package:e_commerce_app/fearures/home/presentation/views/widgets/best_selling_header.dart';
 import 'package:e_commerce_app/fearures/home/presentation/views/widgets/custom_home_app_bar.dart';
 import 'package:e_commerce_app/fearures/home/presentation/views/widgets/featured_item.dart';
 import 'package:e_commerce_app/fearures/home/presentation/views/widgets/featured_list.dart';
@@ -21,11 +24,16 @@ class HomeViewBody extends StatelessWidget {
                 CustomHomeAppBar(),
                 SizedBox(height: kTopPadding),
                 SearchTextField(),
-                SizedBox(height:12),
+                SizedBox(height: 12),
                 FeaturedList(),
+                SizedBox(height: 12),
+                BestSellingHeader(),
+                SizedBox(height: 8),
               ],
             ),
           ),
+        BestSellingGridView(),
+
         ],
       ),
     );

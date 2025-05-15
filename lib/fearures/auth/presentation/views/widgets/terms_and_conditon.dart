@@ -4,7 +4,6 @@ import 'package:e_commerce_app/fearures/auth/presentation/views/widgets/custom_c
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-
 class TermsAndConditionsWidget extends StatefulWidget {
   const TermsAndConditionsWidget({super.key, required this.onChanged});
 
@@ -36,7 +35,7 @@ class _TermsAndConditionsWidgetState extends State<TermsAndConditionsWidget> {
                 TextSpan(
                   text: 'من خلال إنشاء حساب ، فإنك توافق على ',
                   style: TextStyles.semiBold13.copyWith(
-                    color: AppColors.kGreyColor,
+                    color: AppColors.greyColor,
                   ),
                 ),
                 TextSpan(

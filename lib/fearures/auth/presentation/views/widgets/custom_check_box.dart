@@ -3,7 +3,6 @@ import 'package:e_commerce_app/core/utils/app_images.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-
 class CustomCheckBox extends StatelessWidget {
   const CustomCheckBox({
     super.key,
@@ -23,7 +22,7 @@ class CustomCheckBox extends StatelessWidget {
         height: 24,
         duration: const Duration(milliseconds: 100),
         decoration: ShapeDecoration(
-          color: isChecked ? AppColors.kPrimaryColor : Colors.white,
+          color: isChecked ? AppColors.primaryColor : Colors.white,
           shape: RoundedRectangleBorder(
             side: BorderSide(
               width: 1.50,

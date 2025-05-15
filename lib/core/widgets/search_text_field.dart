@@ -33,7 +33,7 @@ class SearchTextField extends StatelessWidget {
             width: 20,
             child: Center(child: SvgPicture.asset(Assets.assetsImagesFilter)),
           ),
-          hintStyle: TextStyles.regular13.copyWith(color: AppColors.kGreyColor),
+          hintStyle: TextStyles.regular13.copyWith(color: AppColors.greyColor),
           hintText: 'ابحث عن.......',
           filled: true,
           fillColor: Colors.white,

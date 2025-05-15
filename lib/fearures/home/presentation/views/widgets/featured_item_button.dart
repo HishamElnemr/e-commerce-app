@@ -20,7 +20,7 @@ class FeaturedItemButton extends StatelessWidget {
           child: FittedBox(
             child: Text(
               'تسوق الان',
-              style: TextStyles.bold13.copyWith(color: AppColors.kPrimaryColor),
+              style: TextStyles.bold13.copyWith(color: AppColors.primaryColor),
             ),
           ),
         ),

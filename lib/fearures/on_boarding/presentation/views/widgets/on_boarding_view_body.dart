@@ -42,11 +42,11 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
         DotsIndicator(
           dotsCount: 2,
           decorator: DotsDecorator(
-            activeColor: AppColors.kPrimaryColor,
+            activeColor: AppColors.primaryColor,
             color:
                 currentPage == 1
-                    ? AppColors.kPrimaryColor
-                    : AppColors.kPrimaryColor.withOpacity(0.5),
+                    ? AppColors.primaryColor
+                    : AppColors.primaryColor.withOpacity(0.5),
           ),
         ),
         const SizedBox(height: 24),
@@ -57,11 +57,13 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
           maintainState: true,
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: kHorizontalPadding),
-            child: CustomButton(onPressed: () 
-            {
-               Prefs.setBool(kIsOnBoardingViewSeen, true);
-               Navigator.of(context).pushReplacementNamed(LoginView.routeName);
-            }, text: 'ابدأ الآن'),
+            child: CustomButton(
+              onPressed: () {
+                Prefs.setBool(kIsOnBoardingViewSeen, true);
+                Navigator.of(context).pushReplacementNamed(LoginView.routeName);
+              },
+              text: 'ابدأ الآن',
+            ),
           ),
         ),
         const SizedBox(height: 43),

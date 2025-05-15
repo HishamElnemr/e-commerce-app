@@ -10,7 +10,6 @@ class FeaturedList extends StatelessWidget {
       height: 160,
       child: ListView.builder(
         physics: const BouncingScrollPhysics(),
-
         itemCount: 5,
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
@@ -23,3 +22,5 @@ class FeaturedList extends StatelessWidget {
     );
   }
 }
+
+
