@@ -10,8 +10,6 @@ class FruitItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // height: 260,
-      // width: 163,
       decoration: ShapeDecoration(
         color: const Color(0xFFF3F5F7),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
@@ -30,11 +28,7 @@ class FruitItem extends StatelessWidget {
             child: Column(
               children: [
                 const SizedBox(height: 20),
-                SvgPicture.asset(
-                  Assets.assetsImagesPineappleCuate1,
-                  width: 100,
-                  height: 100,
-                ),
+               Flexible(child: Image.asset(Assets.assetsImagesWatermelonTest)),
                 const SizedBox(height: 24),
                 ListTile(
                   title: const Text(
@@ -53,7 +47,7 @@ class FruitItem extends StatelessWidget {
                         ),
                         TextSpan(
                           text: '/',
-                          style: TextStyles.bold13.copyWith(
+                          style: TextStyles.semiBold13.copyWith(
                             color: AppColors.lightSecondaryColor,
                           ),
                         ),
