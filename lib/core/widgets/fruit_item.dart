@@ -2,7 +2,6 @@ import 'package:e_commerce_app/app_color.dart';
 import 'package:e_commerce_app/core/utils/app_images.dart';
 import 'package:e_commerce_app/core/utils/app_text_styles.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 class FruitItem extends StatelessWidget {
   const FruitItem({super.key});

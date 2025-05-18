@@ -1,9 +1,10 @@
 import 'package:e_commerce_app/constants.dart';
+import 'package:e_commerce_app/core/services/firebase_auth_services.dart';
 import 'package:e_commerce_app/core/services/shared_preferences_singleton.dart';
 import 'package:e_commerce_app/core/utils/app_images.dart';
 import 'package:e_commerce_app/fearures/auth/presentation/views/login_view.dart';
+import 'package:e_commerce_app/fearures/home/presentation/views/home_view.dart';
 import 'package:e_commerce_app/fearures/on_boarding/presentation/views/on_boarding_view.dart';
-import 'package:e_commerce_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -33,9 +34,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
         ),
         SvgPicture.asset(Assets.assetsImagesLogo),
         SvgPicture.asset(Assets.assetsImagesSplashBottom, fit: BoxFit.fill),
-        const SizedBox(
-          height: 20,
-        ),
+        const SizedBox(height: 20),
       ],
     );
   }
@@ -44,7 +43,12 @@ class _SplashViewBodyState extends State<SplashViewBody> {
     bool isOnBoardingViewSeen = Prefs.getBool(kIsOnBoardingViewSeen);
     Future.delayed(const Duration(seconds: 3), () {
       if (isOnBoardingViewSeen) {
-        Navigator.pushReplacementNamed(context, LoginView.routeName);
+        var isLoggedIn = FirebaseAuthServices().isLoggedIn();
+        if (isLoggedIn) {
+          Navigator.pushReplacementNamed(context, HomeView.routeName);
+        } else {
+          Navigator.pushReplacementNamed(context, LoginView.routeName);
+        }
       } else {
         Navigator.pushReplacementNamed(context, OnBoardingView.routeName);
       }

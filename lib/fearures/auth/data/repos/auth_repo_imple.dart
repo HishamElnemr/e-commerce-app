@@ -1,10 +1,13 @@
+import 'dart:convert';
 import 'dart:developer';
 import 'package:dartz/dartz.dart';
+import 'package:e_commerce_app/constants.dart';
 import 'package:e_commerce_app/core/errors/exceptions.dart';
 import 'package:e_commerce_app/core/errors/failures.dart';
 import 'package:e_commerce_app/core/services/database_services.dart';
 import 'package:e_commerce_app/core/services/firebase_auth_services.dart';
 import 'package:e_commerce_app/core/services/firestore_services.dart';
+import 'package:e_commerce_app/core/services/shared_preferences_singleton.dart';
 import 'package:e_commerce_app/core/utils/backend_endpoints.dart';
 import 'package:e_commerce_app/fearures/auth/data/models/user_model.dart';
 import 'package:e_commerce_app/fearures/auth/domain/entites/user_entity.dart';
@@ -54,6 +57,7 @@ class AuthRepoImpl extends AuthRepo {
         password: password,
       );
       var userEntity = await getUserData(uId: user.uid);
+      await saveUserData(userEntity);
       return right(userEntity);
     } on CustomException catch (e) {
       return left(ServerFailure(e.message));
@@ -78,6 +82,7 @@ class AuthRepoImpl extends AuthRepo {
       } else {
         await addUserData(user: userEntity);
       }
+      await saveUserData(userEntity);
       return right(userEntity);
     } on CustomException catch (e) {
       deleteUser(user);
@@ -104,6 +109,7 @@ class AuthRepoImpl extends AuthRepo {
       } else {
         await addUserData(user: userEntity);
       }
+      await saveUserData(userEntity);
       return right(userEntity);
     } on CustomException catch (e) {
       deleteUser(user);
@@ -132,7 +138,7 @@ class AuthRepoImpl extends AuthRepo {
   Future addUserData({required UserEntity user}) async {
     await databaseService.addData(
       BackendEndpoints.addUserEndpoint,
-      user.toMap(),
+      UserModel.fromEntity(user).toMap(),
       user.uId,
     );
   }
@@ -150,5 +156,10 @@ class AuthRepoImpl extends AuthRepo {
     if (user != null) {
       user.delete();
     }
+  }
+
+  Future saveUserData(UserEntity user) async {
+    var jsonData = jsonEncode(UserModel.fromEntity(user).toMap());
+    await Prefs.setString(kUserData, jsonData);
   }
 }

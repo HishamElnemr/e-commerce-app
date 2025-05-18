@@ -20,6 +20,6 @@ class Prefs {
   }
 
   static getString(String key) {
-    return _instance.getString(key) ?? "";
+    return  _instance.getString(key) ?? "";
   }
 }

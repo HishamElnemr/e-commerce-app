@@ -157,4 +157,5 @@ class FirebaseAuthServices {
       oauthCredential,
     )).user!;
   }
+  bool isLoggedIn() => FirebaseAuth.instance.currentUser != null;
 }

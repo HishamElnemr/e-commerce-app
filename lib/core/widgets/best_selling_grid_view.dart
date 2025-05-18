@@ -12,6 +12,7 @@ class BestSellingGridView extends StatelessWidget {
         childAspectRatio: 163 / 214,
         mainAxisSpacing: 8,
         crossAxisSpacing: 16,
+        
       ),
 
       itemCount: 10,
