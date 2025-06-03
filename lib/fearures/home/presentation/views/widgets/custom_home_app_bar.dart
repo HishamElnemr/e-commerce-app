@@ -1,5 +1,5 @@
 import 'package:e_commerce_app/app_color.dart';
-import 'package:e_commerce_app/core/helper_function.dart/get_use.dart';
+import 'package:e_commerce_app/core/helper_function.dart/get_user.dart';
 import 'package:e_commerce_app/core/utils/app_images.dart';
 import 'package:e_commerce_app/core/utils/app_text_styles.dart';
 import 'package:e_commerce_app/core/widgets/notification_widget.dart';
