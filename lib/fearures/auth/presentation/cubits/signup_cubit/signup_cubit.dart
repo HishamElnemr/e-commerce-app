@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class SignupCubit extends Cubit<SignupStates> {
   SignupCubit(this.authRepo) : super(SignupInitialState());
   final AuthRepo authRepo;
- Future<void> createUserWithEmailAndPassword({
+  Future<void> createUserWithEmailAndPassword({
     required String email,
     required String password,
     required String name,

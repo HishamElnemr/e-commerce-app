@@ -75,23 +75,4 @@ class ProductModel {
       image: image,
     );
   }
-
-  Map<String, dynamic> toJson() {
-    return {
-      'name': name,
-      'price': price,
-      'code': code,
-      'description': description,
-      'imageUrl': imageUrl,
-      'isFeatured': isFeatured,
-      'expiresInMonths': expiresInMonths,
-      'isOrganic': isOrganic,
-      'numberOfCalories': numberOfCalories,
-      'unitAmount': unitAmount,
-      'reviews':
-          reviews
-              .map((review) => ReviewModel.fromEntity(review).toJson())
-              .toList(),
-    };
-  }
 }

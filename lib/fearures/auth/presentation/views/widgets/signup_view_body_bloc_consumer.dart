@@ -3,7 +3,6 @@ import 'package:e_commerce_app/core/widgets/custom_modal_progress_hud.dart';
 import 'package:e_commerce_app/fearures/auth/presentation/cubits/signup_cubit/signup_cubit.dart';
 import 'package:e_commerce_app/fearures/auth/presentation/cubits/signup_cubit/signup_states.dart';
 import 'package:e_commerce_app/fearures/auth/presentation/views/widgets/signup_view_body.dart';
-import 'package:e_commerce_app/fearures/home/presentation/views/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

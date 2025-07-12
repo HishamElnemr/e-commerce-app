@@ -14,7 +14,7 @@ class OrDivider extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 16.0),
           child: Text(
             'أو',
-            style: TextStyles.semiBold16.copyWith(color: Color(0xff616A6B)),
+            style: TextStyles.semiBold16.copyWith(color: const Color(0xff616A6B)),
           ),
         ),
       const  Expanded(child: Divider(color: Color(0xffC9CECF), thickness: 1)),

@@ -6,7 +6,6 @@ import 'package:e_commerce_app/core/errors/exceptions.dart';
 import 'package:e_commerce_app/core/errors/failures.dart';
 import 'package:e_commerce_app/core/services/database_services.dart';
 import 'package:e_commerce_app/core/services/firebase_auth_services.dart';
-import 'package:e_commerce_app/core/services/firestore_services.dart';
 import 'package:e_commerce_app/core/services/shared_preferences_singleton.dart';
 import 'package:e_commerce_app/core/utils/backend_endpoints.dart';
 import 'package:e_commerce_app/fearures/auth/data/models/user_model.dart';

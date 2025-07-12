@@ -10,24 +10,45 @@ class ProductRepoImp implements ProductRepo {
   final DatabaseService databaseService;
   ProductRepoImp({required this.databaseService});
   @override
-  Future<Either<Failure, ProductEntity>> getBestSellerProducts() {
-    throw UnimplementedError();
+  Future<Either<Failure, List<ProductEntity>>> getBestSellerProducts() async {
+    try {
+      var data =
+          await databaseService.getData(
+                path: BackendEndpoints.getProducts,
+                queryParameters: {
+                  'limit': '10',
+                  'orderBy': 'sellingCount',
+                  'descending': 'true',
+                },
+              )
+              as List<Map<String, dynamic>>;
+      List<ProductModel> products = [];
+      for (var product in data) {
+        products.add(ProductModel.fromJson(product));
+      }
+      List<ProductEntity> productEntities =
+          products.map((e) => e.toEntity()).toList();
+      return Right(productEntities);
+    } on Exception {
+      return Left(ServerFailure('Failed to fetch products'));
+    }
   }
 
   @override
-  Future<Either<Failure, ProductEntity>> getProducts() async {
-    var data =
-        await databaseService.getData(path: BackendEndpoints.getProducts)
-            as List<Map<String, dynamic>>;
-    List<ProductModel> products = [];
-    for (var product in data) {
-      products.add(ProductModel.fromJson(product));
+  Future<Either<Failure, List<ProductEntity>>> getProducts() async {
+    try {
+      var data =
+          await databaseService.getData(path: BackendEndpoints.getProducts)
+              as List<Map<String, dynamic>>;
+      List<ProductModel> products = [];
+      for (var product in data) {
+        products.add(ProductModel.fromJson(product));
+      }
+      List<ProductEntity> productEntities =
+          products.map((e) => e.toEntity()).toList();
+      return Right(productEntities);
+    } on Exception {
+      return Left(ServerFailure('Failed to fetch products'));
     }
-    List<ProductEntity> productEntities =
-        products.map((e) => e.toEntity()).toList();
-    return Right(productEntities as ProductEntity);
-
-    
-
   }
 }
