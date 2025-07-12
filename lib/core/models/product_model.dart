@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:e_commerce_app/core/entites/add_product_entity_input.dart';
+import 'package:e_commerce_app/core/entites/product_entity.dart';
 import 'package:e_commerce_app/core/entites/review_entity.dart';
 import 'package:e_commerce_app/core/models/review_model.dart';
 
