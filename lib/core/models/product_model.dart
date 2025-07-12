@@ -18,6 +18,7 @@ class ProductModel {
   final int unitAmount;
   final num averageRating = 0.0;
   final num ratingCount = 0;
+  final num sellingCount;
   final List<ReviewEntity> reviews;
   ProductModel({
     required this.name,
@@ -31,25 +32,50 @@ class ProductModel {
     required this.numberOfCalories,
     required this.unitAmount,
     this.imageUrl,
+    required this.sellingCount,
     required this.reviews,
   });
 
-  factory ProductModel.fromEntity(ProductEntity productEntity) {
+  factory ProductModel.fromJson(Map<String, dynamic> json) {
     return ProductModel(
-      name: productEntity.name,
-      price: productEntity.price,
-      code: productEntity.code,
-      description: productEntity.description,
-      image: productEntity.image,
-      isFeatured: productEntity.isFeatured,
-      imageUrl: productEntity.imageUrl,
-      expiresInMonths: productEntity.expiresInMonths,
-      isOrganic: productEntity.isOrganic,
-      numberOfCalories: productEntity.numberOfCalories,
-      unitAmount: productEntity.unitAmount,
-      reviews: productEntity.reviews,
+      name: json['name'],
+      price: json['price'],
+      code: json['code'],
+      description: json['description'],
+      image: File(json['imageUrl']),
+      isFeatured: json['isFeatured'],
+      expiresInMonths: json['expiresInMonths'],
+      isOrganic: json['isOrganic'],
+      numberOfCalories: json['numberOfCalories'],
+      unitAmount: json['unitAmount'],
+      imageUrl: json['imageUrl'],
+      sellingCount: json['sellingCount'],
+      reviews:
+          json['reviews'] != null
+              ? List<ReviewEntity>.from(
+                json['reviews'].map((review) => ReviewModel.fromJson(review)),
+              )
+              : [],
     );
   }
+
+  ProductEntity toEntity() {
+    return ProductEntity(
+      name: name,
+      price: price,
+      code: code,
+      description: description,
+      imageUrl: imageUrl ?? '',
+      isFeatured: isFeatured,
+      expiresInMonths: expiresInMonths,
+      isOrganic: isOrganic,
+      numberOfCalories: numberOfCalories,
+      unitAmount: unitAmount,
+      reviews: reviews.map((review) => review.toEntity()).toList(),
+      image: image,
+    );
+  }
+
   Map<String, dynamic> toJson() {
     return {
       'name': name,

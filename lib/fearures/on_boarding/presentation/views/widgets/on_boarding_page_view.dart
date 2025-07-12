@@ -14,7 +14,7 @@ class OnBoardingPageView extends StatelessWidget {
       physics: const BouncingScrollPhysics(),
       children: [
         PageViewItem(
-          imagePath: Assets.assetsImagesBasketAmico1Svg,
+          imagePath: Assets.assetsImagesBasketAmico1,
           backGround: Assets.assetsImagesOnBoardingFirstPageBg,
           title: Row(
             mainAxisAlignment: MainAxisAlignment.center,

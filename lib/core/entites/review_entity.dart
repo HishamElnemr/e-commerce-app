@@ -12,4 +12,13 @@ class ReviewEntity {
     required this.comment,
     required this.date,
   });
+  ReviewEntity toEntity() {
+    return ReviewEntity(
+      name: name,
+      image: image,
+      rating: rating,
+      comment: comment,
+      date: date,
+    );
+  }
 }
