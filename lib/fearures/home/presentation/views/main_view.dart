@@ -1,5 +1,5 @@
 import 'package:e_commerce_app/fearures/home/presentation/views/widgets/custom_bottom_nav_bar.dart';
-import 'package:e_commerce_app/fearures/home/presentation/views/widgets/home_view_body.dart';
+import 'package:e_commerce_app/fearures/home/presentation/views/home_view.dart';
 import 'package:flutter/material.dart';
 
 class MainView extends StatelessWidget {
@@ -9,8 +9,7 @@ class MainView extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       bottomNavigationBar: CustomBottomNavBar(),
-      body: SafeArea(child: HomeViewBody(),
-    ),
+      body: SafeArea(child: HomeView()),
     );
   }
 }
