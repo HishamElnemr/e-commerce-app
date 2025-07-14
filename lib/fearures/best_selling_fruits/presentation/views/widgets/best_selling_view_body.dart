@@ -1,5 +1,4 @@
 import 'package:e_commerce_app/constants.dart';
-import 'package:e_commerce_app/core/widgets/best_selling_grid_view.dart';
 import 'package:flutter/material.dart';
 
 class BestSellingViewBody extends StatelessWidget {
@@ -11,7 +10,7 @@ class BestSellingViewBody extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: kHorizontalPadding),
       child: const CustomScrollView(
         physics: BouncingScrollPhysics(),
-        slivers: [BestSellingGridView()],
+       // slivers: [BestSellingGridView()],
       ),
     );
   }

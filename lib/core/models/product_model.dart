@@ -1,7 +1,6 @@
-import 'dart:io';
-
 import 'package:e_commerce_app/core/entites/product_entity.dart';
 import 'package:e_commerce_app/core/entites/review_entity.dart';
+import 'package:e_commerce_app/core/helper_function.dart/get_avg_rating.dart';
 import 'package:e_commerce_app/core/models/review_model.dart';
 
 class ProductModel {
@@ -9,23 +8,22 @@ class ProductModel {
   final num price;
   final String code;
   final String description;
-  final File image;
   String? imageUrl;
   final bool isFeatured;
   final int expiresInMonths;
   final bool isOrganic;
   final int numberOfCalories;
   final int unitAmount;
-  final num averageRating = 0.0;
+  final num averageRating ;
   final num ratingCount = 0;
   final num sellingCount;
   final List<ReviewEntity> reviews;
   ProductModel({
+    required this.averageRating,
     required this.name,
     required this.price,
     required this.code,
     required this.description,
-    required this.image,
     required this.isFeatured,
     required this.expiresInMonths,
     this.isOrganic = false,
@@ -38,11 +36,14 @@ class ProductModel {
 
   factory ProductModel.fromJson(Map<String, dynamic> json) {
     return ProductModel(
+      averageRating: getAvgRating(json['reviews'] != null
+          ? List<ReviewEntity>.from(
+              json['reviews'].map((e) => ReviewModel.fromJson(e)))
+          : []),
       name: json['name'],
       price: json['price'],
       code: json['code'],
       description: json['description'],
-      image: File(json['imageUrl']),
       isFeatured: json['isFeatured'],
       expiresInMonths: json['expiresInMonths'],
       isOrganic: json['isOrganic'],
@@ -72,7 +73,8 @@ class ProductModel {
       numberOfCalories: numberOfCalories,
       unitAmount: unitAmount,
       reviews: reviews.map((review) => review.toEntity()).toList(),
-      image: image,
     );
   }
 }
+
+
