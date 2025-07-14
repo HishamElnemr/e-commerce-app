@@ -58,6 +58,10 @@ class Assets {
   /// assets/images/pineapple_cuate_1.svg
   static const String assetsImagesPineappleCuate1 = "assets/images/pineapple_cuate_1.svg";
 
+  /// Assets for assetsImagesPlaceholder
+  /// assets/images/placeholder.png
+  static const String assetsImagesPlaceholder = "assets/images/placeholder.png";
+
   /// Assets for assetsImagesPlant
   /// assets/images/plant.svg
   static const String assetsImagesPlant = "assets/images/plant.svg";

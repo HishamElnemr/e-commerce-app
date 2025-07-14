@@ -1,6 +1,8 @@
 import 'package:e_commerce_app/app_color.dart';
 import 'package:e_commerce_app/core/entites/product_entity.dart';
+import 'package:e_commerce_app/core/utils/app_images.dart';
 import 'package:e_commerce_app/core/utils/app_text_styles.dart';
+import 'package:e_commerce_app/core/widgets/cached_network_image_widget.dart';
 import 'package:flutter/material.dart';
 
 class FruitItem extends StatelessWidget {
@@ -27,7 +29,18 @@ class FruitItem extends StatelessWidget {
             child: Column(
               children: [
                 const SizedBox(height: 20),
-                Flexible(child: Image.network(product.imageUrl!)),
+                Flexible(
+                  child:
+                      product.imageUrl?.isNotEmpty == true
+                          ? CachedNetworkImageWidget(
+                            imageUrl: product.imageUrl!,
+                          )
+                          : Image.asset(
+                            Assets.assetsImagesPlaceholder,
+                            fit: BoxFit.cover,
+                          ),
+                ),
+
                 const SizedBox(height: 24),
                 ListTile(
                   title: Text(

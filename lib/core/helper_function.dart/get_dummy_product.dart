@@ -1,5 +1,4 @@
 import 'package:e_commerce_app/core/entites/product_entity.dart';
-import 'package:e_commerce_app/core/utils/app_images.dart';
 
 ProductEntity getDummyProduct() {
   return  ProductEntity(
@@ -13,7 +12,7 @@ ProductEntity getDummyProduct() {
     unitAmount: 1,
     isOrganic: true,
     isFeatured: true,
-    imageUrl: Assets.assetsImagesWatermelonTest,
+    imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1AKF7LelsXtbK8YAYYdiPrDMZdFd74ZTgkQ&s',
   );
 }
 
